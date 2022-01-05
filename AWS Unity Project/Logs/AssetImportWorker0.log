@@ -11,19 +11,19 @@ C:\2020.3.23f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/yosulkong6/Desktop/AWS Unity Project
+C:/Users/yosulkong6/Documents/GitHub/AWS_Test/AWS Unity Project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54783
-Successfully changed project path to: C:/Users/yosulkong6/Desktop/AWS Unity Project
-C:/Users/yosulkong6/Desktop/AWS Unity Project
+56454
+Successfully changed project path to: C:/Users/yosulkong6/Documents/GitHub/AWS_Test/AWS Unity Project
+C:/Users/yosulkong6/Documents/GitHub/AWS_Test/AWS Unity Project
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 60.77 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 61.16 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.23f1 (c5d91304a876)
 [Subsystems] Discovering subsystems at path C:/2020.3.23f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/yosulkong6/Desktop/AWS Unity Project/Assets
+[Subsystems] Discovering subsystems at path C:/Users/yosulkong6/Documents/GitHub/AWS_Test/AWS Unity Project/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -35,37 +35,37 @@ Initialize mono
 Mono path[0] = 'C:/2020.3.23f1/Editor/Data/Managed'
 Mono path[1] = 'C:/2020.3.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/2020.3.23f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56896
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56956
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/2020.3.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001187 seconds.
+Registered in 0.001214 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 57.62 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 57.08 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.395 seconds
 Domain Reload Profiling:
 	ReloadAssembly (395ms)
-		BeginReloadAssembly (35ms)
+		BeginReloadAssembly (34ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (315ms)
+		EndReloadAssembly (314ms)
 			LoadAssemblies (33ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (88ms)
+			SetupTypeCache (87ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (18ms)
-			SetupLoadedEditorAssemblies (141ms)
+			SetupLoadedEditorAssemblies (140ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (58ms)
+				RefreshPlugins (57ms)
 				BeforeProcessingInitializeOnLoad (11ms)
-				ProcessInitializeOnLoadAttributes (52ms)
+				ProcessInitializeOnLoadAttributes (51ms)
 				ProcessInitializeOnLoadMethodAttributes (18ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -73,10 +73,10 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008620 seconds.
+Registered in 0.008596 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Desktop\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Desktop\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Unloading broken assembly Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet/cs/AWSSDK.CognitoIdentity.CodeAnalysis.dll, this assembly can cause crashes in the runtime
 Unloading broken assembly Assets/Packages/AWSSDK.CognitoSync.3.1.0.5/analyzers/dotnet/cs/AWSSDK.CognitoSync.CodeAnalysis.dll, this assembly can cause crashes in the runtime
 Unloading broken assembly Assets/Packages/AWSSDK.SecurityToken.3.7.1.101/analyzers/dotnet/cs/AWSSDK.SecurityToken.CodeAnalysis.dll, this assembly can cause crashes in the runtime
@@ -87,28 +87,28 @@ Refreshing native plugins compatible for Editor in 0.70 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 DisplayProgressbar: Restoring NuGet Packages
 Mono: successfully reloaded assembly
-- Completed reload, in  0.956 seconds
+- Completed reload, in  0.960 seconds
 Domain Reload Profiling:
-	ReloadAssembly (957ms)
+	ReloadAssembly (960ms)
 		BeginReloadAssembly (88ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (13ms)
-		EndReloadAssembly (829ms)
+		EndReloadAssembly (833ms)
 			LoadAssemblies (63ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (225ms)
+			SetupTypeCache (221ms)
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (457ms)
+			SetupLoadedEditorAssemblies (464ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (67ms)
-				ProcessInitializeOnLoadAttributes (379ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (387ms)
 				ProcessInitializeOnLoadMethodAttributes (3ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
@@ -118,14 +118,14 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.76 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.67 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2989 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 119.9 MB.
-System memory in use after: 120.1 MB.
+System memory in use before: 120.0 MB.
+System memory in use after: 120.2 MB.
 
 Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 3421.
-Total: 2.503600 ms (FindLiveObjects: 0.250100 ms CreateObjectMapping: 0.078500 ms MarkObjects: 2.129700 ms  DeleteObjects: 0.044600 ms)
+Total: 2.390000 ms (FindLiveObjects: 0.211000 ms CreateObjectMapping: 0.072000 ms MarkObjects: 2.059900 ms  DeleteObjects: 0.046200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -139,96 +139,93 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/lib
-  artifactKey: Guid(276c1e275c32fcd43b09e7c024624b00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/lib using Guid(276c1e275c32fcd43b09e7c024624b00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9971397b00dff2b9e7914a7287ce2ca2') in 0.007049 seconds 
-  Import took 0.009836 seconds .
+  path: Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/lib/net45
+  artifactKey: Guid(232db5682dedb9b45ba03fd6fb808996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/lib/net45 using Guid(232db5682dedb9b45ba03fd6fb808996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a938b5a0b59390fb29f604c3719e53c') in 0.007722 seconds 
+  Import took 0.010656 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000111 seconds.
-  path: Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers
-  artifactKey: Guid(7dbb4895973e35d43b0e4d5e1e18cc6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers using Guid(7dbb4895973e35d43b0e4d5e1e18cc6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '503ff239473c03f2924cade559560b0a') in 0.003553 seconds 
-  Import took 0.005976 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.502990 seconds.
-  path: Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet
-  artifactKey: Guid(6c2e29624b7a3484ba23e1a9e6b3d047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet using Guid(6c2e29624b7a3484ba23e1a9e6b3d047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73ed182241e583f511689d5f64faa42a') in 0.004532 seconds 
-  Import took 0.007886 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.530459 seconds.
-  path: Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet/cs
-  artifactKey: Guid(48219599c19ef7147be4e75acb27490a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet/cs using Guid(48219599c19ef7147be4e75acb27490a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38c7de30ecab41f49091daf1a0ba603d') in 0.005251 seconds 
-  Import took 0.008934 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.834217 seconds.
-  path: Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet/cs/AWSSDK.CognitoIdentity.CodeAnalysis.dll
-  artifactKey: Guid(9208212fd4286cf408e93cef96e135c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet/cs/AWSSDK.CognitoIdentity.CodeAnalysis.dll using Guid(9208212fd4286cf408e93cef96e135c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17d18c52b8ed07b76c653a0676977726') in 0.024893 seconds 
-  Import took 0.028453 seconds .
+  Time since last request: 0.000103 seconds.
+  path: Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/lib/net45/AWSSDK.CognitoIdentity.dll
+  artifactKey: Guid(25543bc315841a54ba00000170063a42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/lib/net45/AWSSDK.CognitoIdentity.dll using Guid(25543bc315841a54ba00000170063a42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1094f5913e0719975e521cd07313b143') in 0.021419 seconds 
+  Import took 0.024207 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.007914 seconds.
+Registered in 0.007582 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Desktop\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Desktop\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Unloading broken assembly Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet/cs/AWSSDK.CognitoIdentity.CodeAnalysis.dll, this assembly can cause crashes in the runtime
 Unloading broken assembly Assets/Packages/AWSSDK.CognitoSync.3.1.0.5/analyzers/dotnet/cs/AWSSDK.CognitoSync.CodeAnalysis.dll, this assembly can cause crashes in the runtime
 Unloading broken assembly Assets/Packages/AWSSDK.SecurityToken.3.7.1.101/analyzers/dotnet/cs/AWSSDK.SecurityToken.CodeAnalysis.dll, this assembly can cause crashes in the runtime
 Unloading broken assembly Assets/Packages/AWSSDK.CognitoIdentityProvider.3.7.1.82/analyzers/dotnet/cs/AWSSDK.CognitoIdentityProvider.CodeAnalysis.dll, this assembly can cause crashes in the runtime
 Unloading broken assembly Assets/Packages/AWSSDK.DynamoDBv2.3.7.2.5/analyzers/dotnet/cs/AWSSDK.DynamoDBv2.CodeAnalysis.dll, this assembly can cause crashes in the runtime
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.72 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.70 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+System.UnauthorizedAccessException: Access to the path "C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Assets\Packages\AWSSDK.CognitoIdentity.3.7.0.110\analyzers\dotnet\cs\AWSSDK.CognitoIdentity.CodeAnalysis.dll" is denied.
+  at System.IO.File.Delete (System.String path) [0x00073] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.Directory.RecursiveDelete (System.String path) [0x0003f] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.Directory.Delete (System.String path, System.Boolean recursive) [0x00009] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.DirectoryInfo.Delete (System.Boolean recursive) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.DirectoryInfo.Delete(bool)
+  at NugetForUnity.NugetHelper.DeleteDirectory (System.String directoryPath) [0x0005f] in <6a48cd2923ae4ff490cdbdab680b2a59>:0 
+  at NugetForUnity.NugetHelper.DeleteDirectory (System.String directoryPath) [0x00023] in <6a48cd2923ae4ff490cdbdab680b2a59>:0 
+  at NugetForUnity.NugetHelper.DeleteDirectory (System.String directoryPath) [0x00023] in <6a48cd2923ae4ff490cdbdab680b2a59>:0 
+  at NugetForUnity.NugetHelper.DeleteDirectory (System.String directoryPath) [0x00023] in <6a48cd2923ae4ff490cdbdab680b2a59>:0 
+  at NugetForUnity.NugetHelper.CheckForUnnecessaryPackages () [0x000aa] in <6a48cd2923ae4ff490cdbdab680b2a59>:0 
+  at NugetForUnity.NugetHelper.Restore () [0x0011b] in <6a48cd2923ae4ff490cdbdab680b2a59>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:LogFormat (UnityEngine.LogType,string,object[])
+UnityEngine.Debug:LogErrorFormat (string,object[])
+NugetForUnity.NugetHelper:Restore ()
+NugetForUnity.NugetHelper:.cctor ()
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
 Mono: successfully reloaded assembly
-- Completed reload, in  1.037 seconds
+- Completed reload, in  0.904 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1037ms)
+	ReloadAssembly (904ms)
 		BeginReloadAssembly (87ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (32ms)
-		EndReloadAssembly (905ms)
-			LoadAssemblies (70ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (777ms)
+			LoadAssemblies (62ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (251ms)
+			SetupTypeCache (219ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (487ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (409ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (66ms)
-				ProcessInitializeOnLoadAttributes (409ms)
+				BeforeProcessingInitializeOnLoad (54ms)
+				ProcessInitializeOnLoadAttributes (344ms)
 				ProcessInitializeOnLoadMethodAttributes (3ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.69 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.53 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2986 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.5 MB.
-System memory in use after: 131.7 MB.
+System memory in use before: 125.8 MB.
+System memory in use after: 126.0 MB.
 
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 3445.
-Total: 2.479800 ms (FindLiveObjects: 0.215900 ms CreateObjectMapping: 0.072800 ms MarkObjects: 2.170400 ms  DeleteObjects: 0.019800 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 3435.
+Total: 2.295300 ms (FindLiveObjects: 0.171900 ms CreateObjectMapping: 0.060400 ms MarkObjects: 2.043700 ms  DeleteObjects: 0.018600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -243,34 +240,322 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1086.374149 seconds.
-  path: Assets/packages.config
-  artifactKey: Guid(0b55de020c07b51459cad46860614ee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/packages.config using Guid(0b55de020c07b51459cad46860614ee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ad255a995e1119220952f9b98b4dc5e') in 0.017269 seconds 
-  Import took 0.020920 seconds .
+  Time since last request: 260.525402 seconds.
+  path: Assets/Packages/System.Runtime.CompilerServices.Unsafe.5.0.0
+  artifactKey: Guid(a43d39cc64f128944934c4e413c18c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/System.Runtime.CompilerServices.Unsafe.5.0.0 using Guid(a43d39cc64f128944934c4e413c18c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11b811e45c66b7ab53e7f3c0d84ce872') in 0.008397 seconds 
+  Import took 0.012040 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.384191 seconds.
-  path: Assets/NuGet.config
-  artifactKey: Guid(a11950f5177b5a14e94866ff63dcbad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NuGet.config using Guid(a11950f5177b5a14e94866ff63dcbad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e33db95a9018676c2cee3926d809ebbf') in 0.005374 seconds 
-  Import took 0.008862 seconds .
+  Time since last request: 154.628113 seconds.
+  path: Assets/Packages/AWSSDK.SecurityToken.3.7.1.101
+  artifactKey: Guid(36be3abdfdf579649a1c6ba741ab932a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/AWSSDK.SecurityToken.3.7.1.101 using Guid(36be3abdfdf579649a1c6ba741ab932a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21959c5920709b6f7c59a5ef9bf43784') in 0.005184 seconds 
+  Import took 0.008670 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 222.300050 seconds.
-  path: Assets/Scripts/CredentialsManager.cs
-  artifactKey: Guid(703588611d3414a38b5285e18fe0fb1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/CredentialsManager.cs using Guid(703588611d3414a38b5285e18fe0fb1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70aba2ef7b38d887197775955d96ec03') in 0.008007 seconds 
-  Import took 0.011525 seconds .
+  Time since last request: 188.358190 seconds.
+  path: Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/AWSSDK.CognitoIdentity.3.7.0.110.nupkg
+  artifactKey: Guid(068bc1c84f1e74d4c89f410670ed7bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/AWSSDK.CognitoIdentity.3.7.0.110.nupkg using Guid(068bc1c84f1e74d4c89f410670ed7bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f337582dddac752be9d7eaa6a271a7f') in 0.012378 seconds 
+  Import took 0.016324 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.335040 seconds.
-  path: Assets/Scripts/DynamoDB.cs
-  artifactKey: Guid(3ed49b6c6ff4a7e40ab782e6ecf7a1d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DynamoDB.cs using Guid(3ed49b6c6ff4a7e40ab782e6ecf7a1d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '399ff506f9efcc078afa4f452e6ac65a') in 0.005152 seconds 
-  Import took 0.008357 seconds .
+  Time since last request: 117.497387 seconds.
+  path: Assets/Plugins/AWSSDK.CognitoIdentity.dll
+  artifactKey: Guid(f8d8d8bc668e3144493db7fd1a42ab26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AWSSDK.CognitoIdentity.dll using Guid(f8d8d8bc668e3144493db7fd1a42ab26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30cde5cc6e80a122ea20607d544ba3b5') in 0.004401 seconds 
+  Import took 0.007696 seconds .
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005072 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Unloading broken assembly Assets/Packages/AWSSDK.CognitoIdentity.3.7.0.110/analyzers/dotnet/cs/AWSSDK.CognitoIdentity.CodeAnalysis.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.679 seconds
+Domain Reload Profiling:
+	ReloadAssembly (679ms)
+		BeginReloadAssembly (89ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (551ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (211ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (192ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (55ms)
+				ProcessInitializeOnLoadAttributes (126ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.55 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2974 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 125.5 MB.
+System memory in use after: 125.7 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 3437.
+Total: 2.535800 ms (FindLiveObjects: 0.258200 ms CreateObjectMapping: 0.073100 ms MarkObjects: 2.186700 ms  DeleteObjects: 0.016800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005054 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.680 seconds
+Domain Reload Profiling:
+	ReloadAssembly (680ms)
+		BeginReloadAssembly (79ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (561ms)
+			LoadAssemblies (59ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (214ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (193ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (56ms)
+				ProcessInitializeOnLoadAttributes (126ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.55 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2973 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 125.5 MB.
+System memory in use after: 125.7 MB.
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 3439.
+Total: 2.344200 ms (FindLiveObjects: 0.193700 ms CreateObjectMapping: 0.085400 ms MarkObjects: 2.048000 ms  DeleteObjects: 0.016500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 138.499928 seconds.
+  path: Assets/Plugins/AWSSDK.SecurityToken.dll
+  artifactKey: Guid(aa35e9d429fbaa249bdc9897d07735b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AWSSDK.SecurityToken.dll using Guid(aa35e9d429fbaa249bdc9897d07735b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae728a141e3627d1c8e973e0ec82de88') in 0.009996 seconds 
+  Import took 0.013410 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.649850 seconds.
+  path: Assets/Plugins/AWSSDK.DynamoDBv2.dll
+  artifactKey: Guid(b712bcd75415c5542a04249f3eac34f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AWSSDK.DynamoDBv2.dll using Guid(b712bcd75415c5542a04249f3eac34f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '310c6fa576d8cdd49fddafbbef672fb3') in 0.005138 seconds 
+  Import took 0.008474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.742986 seconds.
+  path: Assets/Plugins/AWSSDK.Core.dll
+  artifactKey: Guid(45878a66b99c5ad40892cb88682dd3bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AWSSDK.Core.dll using Guid(45878a66b99c5ad40892cb88682dd3bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '530d90c481d7c11fdff7300e77524bc8') in 0.004416 seconds 
+  Import took 0.007617 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.666787 seconds.
+  path: Assets/Plugins/AWSSDK.CognitoIdentityProvider.dll
+  artifactKey: Guid(90b4850832facbb4d98f08118a703302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AWSSDK.CognitoIdentityProvider.dll using Guid(90b4850832facbb4d98f08118a703302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14d89e2591732990101e814bc9b74c3a') in 0.004544 seconds 
+  Import took 0.008083 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004975 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.709 seconds
+Domain Reload Profiling:
+	ReloadAssembly (709ms)
+		BeginReloadAssembly (82ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (587ms)
+			LoadAssemblies (61ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (220ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (198ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (126ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2974 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 125.6 MB.
+System memory in use after: 125.8 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 3441.
+Total: 2.300800 ms (FindLiveObjects: 0.181900 ms CreateObjectMapping: 0.071200 ms MarkObjects: 2.029400 ms  DeleteObjects: 0.017600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005296 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yosulkong6\Documents\GitHub\AWS_Test\AWS Unity Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.721 seconds
+Domain Reload Profiling:
+	ReloadAssembly (721ms)
+		BeginReloadAssembly (96ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (584ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (226ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (194ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (57ms)
+				ProcessInitializeOnLoadAttributes (126ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 125.7 MB.
+System memory in use after: 125.9 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3443.
+Total: 2.518700 ms (FindLiveObjects: 0.244800 ms CreateObjectMapping: 0.073100 ms MarkObjects: 2.179400 ms  DeleteObjects: 0.020800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 96.911013 seconds.
+  path: Assets/Plugins/AWSSDK.S3.dll
+  artifactKey: Guid(7277cb9617ae6ac4ca48cf592f9313d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AWSSDK.S3.dll using Guid(7277cb9617ae6ac4ca48cf592f9313d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc099c17fd0d70ddd66b60e762f06432') in 0.007923 seconds 
+  Import took 0.011537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.294732 seconds.
+  path: Assets/Plugins/AWSSDK.Lambda.dll
+  artifactKey: Guid(88e4443e109354444b95b7a5fc886c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AWSSDK.Lambda.dll using Guid(88e4443e109354444b95b7a5fc886c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '349ee3acde99370e828fad7ca7f21013') in 0.004484 seconds 
+  Import took 0.007716 seconds .
+
