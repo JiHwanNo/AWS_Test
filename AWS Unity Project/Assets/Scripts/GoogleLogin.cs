@@ -1,26 +1,28 @@
-
-using Amazon.CognitoIdentityProvider;
-using Amazon.CognitoIdentityProvider.Model;
-using Amazon.Extensions.CognitoAuthentication;
-using UnityEngine;
 // Text UI 사용
-using UnityEngine.UI;
 // 구글 플레이 연동
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using Amazon;
-using Amazon.CognitoIdentity;
+using System.Collections;
+using UnityEngine;
+
 public class GoogleLogin : MonoBehaviour
 {
-    public Text text;
+
+    string token = string.Empty;
 
     void Awake()
     {
-        PlayGamesPlatform.InitializeInstance(new PlayGamesClientConfiguration.Builder().Build());
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
+           .Builder()
+           .RequestIdToken()               // 토큰 요청
+           .Build();
+
+        PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
+        
+        UnityEngine.Debug.Log("Social.localUser.Authenticate");
 
-        text.text = "no Login";
         OnLogin();
     }
 
@@ -33,16 +35,15 @@ public class GoogleLogin : MonoBehaviour
             {
                 if (bSuccess)
                 {
-                    string token = PlayGamesPlatform.Instance.GetIdToken();
+                    UnityEngine.Debug.Log("Social.Login Successful");
+                    StartCoroutine(LoginByGoogle());
+                    Debug.Log("token " + token);
+                    CredentialsManager.credentials.AddLogin("accounts.google.com", token); // providername, token
 
-                    CredentialsManager.credentials.AddLogin("accounts.google.com", token);
-                    
-                    text.text = CredentialsManager.credentials.GetIdentityId();
                 }
                 else
                 {
                     Debug.Log("Fall");
-                    text.text = "Fail";
                 }
             });
         }
@@ -51,10 +52,22 @@ public class GoogleLogin : MonoBehaviour
     public void OnLogOut()
     {
         ((PlayGamesPlatform)Social.Active).SignOut();
-        text.text = "Logout";
     }
 
 
+    public IEnumerator LoginByGoogle()
+    {
+        Debug.Log("Google Login ");
+        token = PlayGamesPlatform.Instance.GetIdToken();
 
- 
+        Debug.Log("first token  " + token);
+        while (string.IsNullOrEmpty(token))
+        {
+            token = PlayGamesPlatform.Instance.GetIdToken();
+            yield return new WaitForSeconds(0.5f);
+        }
+
+    }
+
+
 }

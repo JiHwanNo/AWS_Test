@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Amazon.CognitoIdentityProvider;
+﻿using Amazon.CognitoIdentityProvider;
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Extensions.CognitoAuthentication;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Cognito : MonoBehaviour
 {
@@ -25,7 +25,7 @@ public class Cognito : MonoBehaviour
 
     // Create an Identity Provider
     AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient
-        ( new Amazon.Runtime.AnonymousAWSCredentials(), CredentialsManager.region );
+        (new Amazon.Runtime.AnonymousAWSCredentials(), CredentialsManager.region);
 
     // Start is called before the first frame update
     void Start()
@@ -122,7 +122,8 @@ public class Cognito : MonoBehaviour
             return;
         }
 
-        if (loginSuccessful == true) {
+        if (loginSuccessful == true)
+        {
 
             string subId = await Get_User_Id();
             CredentialsManager.userid = subId;
