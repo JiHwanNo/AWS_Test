@@ -25,7 +25,7 @@ public class Cognito : MonoBehaviour
 
     // Create an Identity Provider
     AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient
-        (new Amazon.Runtime.AnonymousAWSCredentials(), CredentialsManager.region);
+        (new Amazon.Runtime.AnonymousAWSCredentials(), CredentialsManager._region);
 
     // Start is called before the first frame update
     void Start()

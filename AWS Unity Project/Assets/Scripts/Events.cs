@@ -33,7 +33,7 @@ public class Events
 
     public static void Call_Signup()
     {
-        Debug.Log("User signedup in");
+        Debug.LogError("User signedup in");
 
         EventsManager.Create_Signup_Event(country, platform);
     }

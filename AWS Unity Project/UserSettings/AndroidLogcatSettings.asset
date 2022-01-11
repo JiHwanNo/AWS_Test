@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CR716J03N",
         "name": "com.GoogleAWS.Test",
-        "processId": 5131,
+        "processId": 22841,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -42,6 +42,120 @@
             "deviceId": "R5CR716J03N",
             "name": "com.GoogleAWS.Test",
             "processId": 5131,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 9721,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 11831,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 29550,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 30812,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 31720,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 948,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 3602,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 4701,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 5722,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 31730,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 31245,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 31640,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 1825,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 3351,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 5189,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 6902,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 13147,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 14079,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 22841,
             "exited": false
         }
     ],
