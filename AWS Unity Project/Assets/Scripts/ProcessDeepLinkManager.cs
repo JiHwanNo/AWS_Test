@@ -9,17 +9,9 @@ public class ProcessDeepLinkManager : MonoBehaviour
     public static ProcessDeepLinkManager Instance { get; private set; }
 
     private string deeplinkURL;
-    private Login_Test _uiInputManager;
+    AuthenticationManager _uiInputManager;
 
-    private void onDeepLinkActivated(string url)
-    {
-        // Update DeepLink Manager global variable, so URL can be accessed from anywhere.
-        deeplinkURL = url;
-
-        _uiInputManager = FindObjectOfType<Login_Test>();
-        _uiInputManager.ProcessDeepLink(deeplinkURL);
-    }
-
+   
     private void Awake()
     {
         if (Instance == null)
@@ -28,10 +20,9 @@ public class ProcessDeepLinkManager : MonoBehaviour
 
             // setup deeplink callback
             Application.deepLinkActivated += onDeepLinkActivated;
-
             if (!String.IsNullOrEmpty(Application.absoluteURL))
             {
-                // Debug.Log("deep link: " + Application.absoluteURL);
+                Debug.LogError("deep link: " + Application.absoluteURL);
                 onDeepLinkActivated(Application.absoluteURL);
             }
             else
@@ -48,6 +39,15 @@ public class ProcessDeepLinkManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void onDeepLinkActivated(string url)
+    {
+        // Update DeepLink Manager global variable, so URL can be accessed from anywhere.
+        deeplinkURL = url;
+
+        _uiInputManager = FindObjectOfType<AuthenticationManager>();
+        _uiInputManager.ProcessDeepLink(deeplinkURL);
+    }
+
 
     public string GetDeepLink()
     {

@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 public class ApiManager : MonoBehaviour
 {
     private const string Api = "https://qqz3a5ix7b.execute-api.ap-northeast-2.amazonaws.com/AWStest";
-    private Login_Test _authenticationManager;
+    private AuthenticationManager _authenticationManager;
 
     public async void CallTestApi()
     {
@@ -31,6 +31,6 @@ public class ApiManager : MonoBehaviour
 
     void Awake()
     {
-        _authenticationManager = FindObjectOfType<Login_Test>();
+        _authenticationManager = FindObjectOfType<AuthenticationManager>();
     }
 }

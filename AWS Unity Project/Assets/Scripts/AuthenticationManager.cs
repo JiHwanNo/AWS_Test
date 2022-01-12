@@ -1,25 +1,21 @@
 using Amazon.CognitoIdentityProvider;
-using Amazon.CognitoIdentityProvider.Model;
-using Amazon.Extensions.CognitoAuthentication;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-
-public class Login_Test : MonoBehaviour
+using UnityEngine.UI;
+public class AuthenticationManager : MonoBehaviour
 {
-    
+
     public static string CachePath;
 
     // In production, should probably keep these in a config file
     private const string AppClientID = "4bcnhb47vji4ps4q91ou3vhb5b"; // App client ID, found under App Client Settings
     private const string AuthCognitoDomainPrefix = "jihwan-world-test"; // Found under App Integration -> Domain Name. Changing this means it must be updated in all linked Social providers redirect and javascript origins
-    private const string RedirectUrl = "https://www.google.com";
+    private const string RedirectUrl = "unitydl://yosulkong.com/";
+
     private const string Region = "ap-northeast-2"; // Update with the AWS Region that contains your services
 
-    private const string AuthCodeGrantType  = "authorization_code";
+    private const string AuthCodeGrantType = "authorization_code";
     private const string RefreshTokenGrantType = "refresh_token";
     private const string CognitoAuthUrl = ".auth." + Region + ".amazoncognito.com";
     private const string TokenEndpointPath = "/oauth2/token";
@@ -28,38 +24,104 @@ public class Login_Test : MonoBehaviour
     // Token Holder
     public static string jwt;
     public static bool loginSuccessful;
+
     // Create an Identity Provider
     AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient
         (new Amazon.Runtime.AnonymousAWSCredentials(), CredentialsManager._region);
 
-    void Start()
+    void Awake()
     {
-        string loginUrl = GetLoginUrl();
-        Application.OpenURL(loginUrl);
+        CachePath = Application.persistentDataPath;
+        //Debug.LogError("CachePath: " + CachePath);
     }
+
 
     public string GetLoginUrl()
     {
         // DOCS: https://docs.aws.amazon.com/cognito/latest/developerguide/login-endpoint.html
         string loginUrl = "https://" + AuthCognitoDomainPrefix + CognitoAuthUrl
-           + "/login?response_type=code&client_id="
-           + AppClientID + "&redirect_uri=" + RedirectUrl;
+         + "/login?response_type=code&client_id="
+         + AppClientID + "&redirect_uri=" + RedirectUrl +
+         "&state=STATE" +
+         "&scope=aws.cognito.signin.user.admin+email+openid+phone+profile";
+
         return loginUrl;
     }
+
+
 
     public async void ProcessDeepLink(string deepLinkUrl)
     {
         // TODO: add some validation
 
         // Debug.Log("UIInputManager.ProcessDeepLink: " + deepLinkUrl);
-        bool exchangeSuccess = await ExchangeAuthCodeForAccessToken(deepLinkUrl);
+        bool exchangeSuccess = await ExchangeAuthCodeForAccessToken(deepLinkUrl); //코드를 토큰으로 바꾸는 함수 호출
 
+    }
+
+
+    public async Task<bool> CallRefreshTokenEndpoint()
+    {
+        UserSessionCache userSessionCache = new UserSessionCache();
+        SaveDataManager.LoadJsonData(userSessionCache);
+
+        string preservedRefreshToken = "";
+
+        if (userSessionCache != null && userSessionCache._refreshToken != null && userSessionCache._refreshToken != "")
+        {
+            // DOCS: https://docs.aws.amazon.com/cognito/latest/developerguide/token-endpoint.html
+            string refreshTokenUrl = "https://" + AuthCognitoDomainPrefix + CognitoAuthUrl + TokenEndpointPath;
+            // Debug.Log(refreshTokenUrl);
+
+            preservedRefreshToken = userSessionCache._refreshToken;
+
+            WWWForm form = new WWWForm();
+            form.AddField("grant_type", RefreshTokenGrantType);
+            form.AddField("client_id", AppClientID);
+            form.AddField("refresh_token", userSessionCache._refreshToken);
+
+            UnityWebRequest webRequest = UnityWebRequest.Post(refreshTokenUrl, form);
+            webRequest.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            await webRequest.SendWebRequest();
+
+
+            if (webRequest.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Refresh token call failed: " + webRequest.error + "\n" + webRequest.result + "\n" + webRequest.responseCode);
+                // clear out invalid user session data to force re-authentication
+                ClearUserSessionData();
+                webRequest.Dispose();
+            }
+            else
+            {
+                Debug.Log("Success, Refresh token call complete!");
+                // Debug.Log(webRequest.downloadHandler.text);
+
+                BADAuthenticationResultType authenticationResultType = JsonUtility.FromJson<BADAuthenticationResultType>(webRequest.downloadHandler.text);
+
+                // token endpoint to get refreshed access token does NOT return the refresh token, so manually save it from before.
+                authenticationResultType.refresh_token = preservedRefreshToken;
+
+                _userid = AuthUtilities.GetUserSubFromIdToken(authenticationResultType.id_token);
+
+                // update session cache
+                SaveDataManager.SaveJsonData(new UserSessionCache(authenticationResultType, _userid));
+                webRequest.Dispose();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void ClearUserSessionData()
+    {
+        UserSessionCache userSessionCache = new UserSessionCache();
+        SaveDataManager.SaveJsonData(userSessionCache);
     }
     public async Task<bool> ExchangeAuthCodeForAccessToken(string rawUrlWithGrantCode)
     {
-        // Debug.Log("rawUrlWithGrantCode: " + rawUrlWithGrantCode);
-
-        // raw url looks like https://somedomain.com/?code=c91d8bf4-1cb6-46e5-b43a-8def466f3c55
+        
         string allQueryParams = rawUrlWithGrantCode.Split('?')[1];
 
         // it's likely there won't be more than one param
@@ -110,8 +172,7 @@ public class Login_Test : MonoBehaviour
             Debug.Log("Success, Code exchange complete!");
 
             BADAuthenticationResultType authenticationResultType = JsonUtility.FromJson<BADAuthenticationResultType>(webRequest.downloadHandler.text);
-            // Debug.Log("ID token: " + authenticationResultType.id_token);
-
+            
             _userid = AuthUtilities.GetUserSubFromIdToken(authenticationResultType.id_token);
 
             // update session cache

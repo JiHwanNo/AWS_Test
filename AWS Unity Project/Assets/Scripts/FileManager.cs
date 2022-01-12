@@ -8,7 +8,7 @@ public static class FileManager
 {
    public static bool WriteToFile(string a_FileName, string a_FileContents)
    {
-      var fullPath = Path.Combine(Login_Test.CachePath, a_FileName);
+      var fullPath = Path.Combine(AuthenticationManager.CachePath, a_FileName);
 
       try
       {
@@ -24,7 +24,7 @@ public static class FileManager
 
    public static bool LoadFromFile(string a_FileName, out string result)
    {
-      var fullPath = Path.Combine(Login_Test.CachePath, a_FileName);
+      var fullPath = Path.Combine(AuthenticationManager.CachePath, a_FileName);
 
       try
       {
