@@ -3,17 +3,14 @@ using UnityEngine.Networking;
 
 public class ApiManager : MonoBehaviour
 {
-    private const string Api = "https://qqz3a5ix7b.execute-api.ap-northeast-2.amazonaws.com/AWStest";
-    private AuthenticationManager _authenticationManager;
-
+    private const string Api = "https://qqz3a5ix7b.execute-api.ap-northeast-2.amazonaws.com/AWS_2022-01-13";
+    
     public async void CallTestApi()
     {
         UnityWebRequest webRequest = UnityWebRequest.Get(Api);
 
-        // "Include the identity token in the Authorization header... "
-        // Doesn't seem to need the 'Bearer' term in front of the token... IT'S A BEAR DAAAAAAAANCE!!!!
         // https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-invoke-api-integrated-with-cognito-user-pool.html
-        webRequest.SetRequestHeader("Authorization", _authenticationManager.GetIdToken());
+        webRequest.SetRequestHeader("Authorization", AuthenticationManager.jwt);
 
         await webRequest.SendWebRequest();
 
@@ -29,8 +26,4 @@ public class ApiManager : MonoBehaviour
         webRequest.Dispose();
     }
 
-    void Awake()
-    {
-        _authenticationManager = FindObjectOfType<AuthenticationManager>();
-    }
 }

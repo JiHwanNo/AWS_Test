@@ -1,26 +1,48 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using Amazon;
-using Amazon.CognitoIdentity;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime;
 using System;
 using System.Collections.Generic;
-using Amazon.Runtime;
-using Amazon.DynamoDBv2.DocumentModel;
-
+using UnityEngine;
+using UnityEngine.UI;
 public class DynamoDB : MonoBehaviour
 {
     DynamoDBContext context;
     static AmazonDynamoDBClient DBclient;
-    CognitoAWSCredentials credentials;
+    public Button token;
     private void Awake()
     {
-        credentials = new CognitoAWSCredentials("자신의 자격 증명 풀 ID", RegionEndpoint.APNortheast2);
-        DBclient = new AmazonDynamoDBClient(credentials, RegionEndpoint.APNortheast2);
-        context = new DynamoDBContext(DBclient);
-        
+        token.onClick.AddListener(GetTest);
     }
+
+    [DynamoDBTable("Test")]
+    public class Test
+    {
+        [DynamoDBHashKey] // Hash key.
+        public string Item { get; set; }
+        [DynamoDBProperty]
+        public int Cnt { get; set; }
+    }
+
+    void GetTest()
+    {
+
+        DBclient = new AmazonDynamoDBClient(CredentialsManager._credentials, CredentialsManager._region);
+        context = new DynamoDBContext(DBclient);
+
+        Test sendtest = new Test
+        {
+            Item = "index",
+            Cnt = 100,
+        };
+
+        var batch = context.CreateBatchWrite<Test>();
+        batch.AddPutItems(new List<Test> { sendtest });
+        batch.Execute();
+
+    }
+
 
     class HighLevelBatchWriteItem
     {
@@ -334,5 +356,5 @@ public class DynamoDB : MonoBehaviour
             Console.WriteLine("{0}\t{1}\t{2}\t{3}", r.Id, r.Title, r.Price, r.ISBN);
     }
 
-    
+
 }

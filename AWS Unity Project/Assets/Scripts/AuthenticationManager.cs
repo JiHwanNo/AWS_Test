@@ -2,7 +2,7 @@ using Amazon.CognitoIdentityProvider;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
+
 public class AuthenticationManager : MonoBehaviour
 {
 
@@ -11,7 +11,7 @@ public class AuthenticationManager : MonoBehaviour
     // In production, should probably keep these in a config file
     private const string AppClientID = "4bcnhb47vji4ps4q91ou3vhb5b"; // App client ID, found under App Client Settings
     private const string AuthCognitoDomainPrefix = "jihwan-world-test"; // Found under App Integration -> Domain Name. Changing this means it must be updated in all linked Social providers redirect and javascript origins
-    private const string RedirectUrl = "unitydl://yosulkong.com/";
+    private const string RedirectUrl = "unitydl://yosulkong.com";
 
     private const string Region = "ap-northeast-2"; // Update with the AWS Region that contains your services
 
@@ -19,23 +19,24 @@ public class AuthenticationManager : MonoBehaviour
     private const string RefreshTokenGrantType = "refresh_token";
     private const string CognitoAuthUrl = ".auth." + Region + ".amazoncognito.com";
     private const string TokenEndpointPath = "/oauth2/token";
-
+    private static string _userid = "";
 
     // Token Holder
     public static string jwt;
     public static bool loginSuccessful;
 
     // Create an Identity Provider
-    AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient
-        (new Amazon.Runtime.AnonymousAWSCredentials(), CredentialsManager._region);
-
+    AmazonCognitoIdentityProviderClient _provider;
+    ApiManager apiMgr;
     void Awake()
     {
+        _provider = new AmazonCognitoIdentityProviderClient(CredentialsManager._credentials, CredentialsManager._region);
         CachePath = Application.persistentDataPath;
-        //Debug.LogError("CachePath: " + CachePath);
+        apiMgr = FindObjectOfType<ApiManager>();
     }
 
 
+    //링크를 통해 소셜 로그인 화면으로 전환한다.
     public string GetLoginUrl()
     {
         // DOCS: https://docs.aws.amazon.com/cognito/latest/developerguide/login-endpoint.html
@@ -48,18 +49,22 @@ public class AuthenticationManager : MonoBehaviour
         return loginUrl;
     }
 
-
-
+    string confirCode;
+    string userpool_provider = "cognito-idp." + Region + ".amazonaws.com/" + CredentialsManager._userPoolId;
+    //링크 후 어플리케이션 돌아오면 실행되는 함수.
     public async void ProcessDeepLink(string deepLinkUrl)
     {
-        // TODO: add some validation
 
-        // Debug.Log("UIInputManager.ProcessDeepLink: " + deepLinkUrl);
         bool exchangeSuccess = await ExchangeAuthCodeForAccessToken(deepLinkUrl); //코드를 토큰으로 바꾸는 함수 호출
 
+        if (exchangeSuccess)
+        {
+            CredentialsManager._credentials.AddLogin(userpool_provider, jwt);
+            string IdentityId = CredentialsManager._credentials.GetIdentityId();
+            Debug.LogError(IdentityId);
+        }
     }
-
-
+    // 저장되어 있던 토큰이 만료되지 않았다면 다시 불러온다.
     public async Task<bool> CallRefreshTokenEndpoint()
     {
         UserSessionCache userSessionCache = new UserSessionCache();
@@ -108,24 +113,21 @@ public class AuthenticationManager : MonoBehaviour
                 // update session cache
                 SaveDataManager.SaveJsonData(new UserSessionCache(authenticationResultType, _userid));
                 webRequest.Dispose();
+
                 return true;
             }
         }
         return false;
     }
 
-    private void ClearUserSessionData()
-    {
-        UserSessionCache userSessionCache = new UserSessionCache();
-        SaveDataManager.SaveJsonData(userSessionCache);
-    }
+    //인증코드를 토큰으로 바꿔준다.
     public async Task<bool> ExchangeAuthCodeForAccessToken(string rawUrlWithGrantCode)
     {
-        
         string allQueryParams = rawUrlWithGrantCode.Split('?')[1];
 
         // it's likely there won't be more than one param
         string[] paramsSplit = allQueryParams.Split('&');
+
 
         foreach (string param in paramsSplit)
         {
@@ -141,15 +143,16 @@ public class AuthenticationManager : MonoBehaviour
             else
             {
                 Debug.Log("Code not found");
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
-
-    private static string _userid = "";
+    //바꾼 토큰을 임의 지점에 업데이트한다.
     private async Task<bool> CallCodeExchangeEndpoint(string grantCode)
     {
+        confirCode = grantCode;
         WWWForm form = new WWWForm();
         form.AddField("grant_type", AuthCodeGrantType);
         form.AddField("client_id", AppClientID);
@@ -172,15 +175,22 @@ public class AuthenticationManager : MonoBehaviour
             Debug.Log("Success, Code exchange complete!");
 
             BADAuthenticationResultType authenticationResultType = JsonUtility.FromJson<BADAuthenticationResultType>(webRequest.downloadHandler.text);
-            
+            Debug.LogError(webRequest.downloadHandler.text);
             _userid = AuthUtilities.GetUserSubFromIdToken(authenticationResultType.id_token);
 
             // update session cache
             SaveDataManager.SaveJsonData(new UserSessionCache(authenticationResultType, _userid));
+            jwt = authenticationResultType.id_token;
             webRequest.Dispose();
             return true;
         }
         return false;
+    }
+
+    private void ClearUserSessionData()
+    {
+        UserSessionCache userSessionCache = new UserSessionCache();
+        SaveDataManager.SaveJsonData(userSessionCache);
     }
 
     public string GetIdToken()
@@ -189,4 +199,5 @@ public class AuthenticationManager : MonoBehaviour
         SaveDataManager.LoadJsonData(userSessionCache);
         return userSessionCache.getIdToken();
     }
+
 }

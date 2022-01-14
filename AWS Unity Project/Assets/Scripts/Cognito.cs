@@ -24,12 +24,13 @@ public class Cognito : MonoBehaviour
     bool loginSuccessful;
 
     // Create an Identity Provider
-    AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient
-        (new Amazon.Runtime.AnonymousAWSCredentials(), CredentialsManager._region);
+    AmazonCognitoIdentityProviderClient provider;
 
     // Start is called before the first frame update
     void Start()
     {
+        provider  = new AmazonCognitoIdentityProviderClient
+        (CredentialsManager._credentials, CredentialsManager._region);
         LoginButton.onClick.AddListener(Login);
         SignupButton.onClick.AddListener(Signup);
 
@@ -60,7 +61,7 @@ public class Cognito : MonoBehaviour
 
         SignUpRequest signUpRequest = new SignUpRequest()
         {
-            ClientId = CredentialsManager.appClientId,
+            ClientId = CredentialsManager._appClientId,
             Username = email,
             Password = passWord
         };
@@ -93,8 +94,8 @@ public class Cognito : MonoBehaviour
         string userName = LoginUsernameField.text;
         string passWord = LoginPasswordField.text;
 
-        CognitoUserPool userPool = new CognitoUserPool(CredentialsManager.userPoolId, CredentialsManager.appClientId, provider);
-        CognitoUser user = new CognitoUser(userName, CredentialsManager.appClientId, userPool, provider);
+        CognitoUserPool userPool = new CognitoUserPool(CredentialsManager._userPoolId, CredentialsManager._appClientId, provider);
+        CognitoUser user = new CognitoUser(userName, CredentialsManager._appClientId, userPool, provider);
 
         InitiateSrpAuthRequest authRequest = new InitiateSrpAuthRequest()
         {

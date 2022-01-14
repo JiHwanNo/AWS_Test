@@ -5,19 +5,27 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Button LoginBtn;
-    private AuthenticationManager _authenticationManager;
+    public Button TokenBtn;
+    Text tokentext;
 
+    private AuthenticationManager _authenticationManager;
     private void Awake()
     {
         _authenticationManager = FindObjectOfType<AuthenticationManager>();
-
+        tokentext = TokenBtn.transform.GetChild(0).GetComponent<Text>();
     }
     void Start()
     {
         LoginBtn.onClick.AddListener(OpenLogin);
+        TokenBtn.onClick.AddListener(CheckToken);
         RefreshToken();
     }
 
+    void CheckToken()
+    {
+        UserSessionCache userSessionCache = new UserSessionCache();
+        SaveDataManager.LoadJsonData(userSessionCache);
+    }
 
     void OpenLogin()
     {

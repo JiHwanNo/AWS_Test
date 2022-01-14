@@ -138,8 +138,8 @@ public class GoogleLogin : MonoBehaviour
         string userName = PlayGamesPlatform.Instance.GetUserDisplayName();
         string passWord = token.Split('0')[0] + "!";
 
-        CognitoUserPool userPool = new CognitoUserPool(CredentialsManager.userPoolId, CredentialsManager.appClientId, provider);
-        CognitoUser user = new CognitoUser(userName, CredentialsManager.appClientId, userPool, provider);
+        CognitoUserPool userPool = new CognitoUserPool(CredentialsManager._userPoolId, CredentialsManager._appClientId, provider);
+        CognitoUser user = new CognitoUser(userName, CredentialsManager._appClientId, userPool, provider);
 
         InitiateSrpAuthRequest authRequest = new InitiateSrpAuthRequest()
         {
