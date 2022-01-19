@@ -10,10 +10,8 @@ public class DynamoDB : MonoBehaviour
 {
     DynamoDBContext context;
     static AmazonDynamoDBClient DBclient;
-    public Button token;
     private void Awake()
     {
-        token.onClick.AddListener(GetTest);
     }
 
     [DynamoDBTable("Test")]

@@ -1,8 +1,8 @@
-using Amazon.CognitoIdentityProvider;
+ï»¿using Amazon.CognitoIdentityProvider;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-
+using Amazon.CognitoIdentity;
 public class AuthenticationManager : MonoBehaviour
 {
 
@@ -36,12 +36,12 @@ public class AuthenticationManager : MonoBehaviour
     }
 
 
-    //¸µÅ©¸¦ ÅëÇØ ¼Ò¼È ·Î±×ÀÎ È­¸éÀ¸·Î ÀüÈ¯ÇÑ´Ù.
+    //ë§í¬ë¥¼ í†µí•´ ì†Œì…œ ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ì „í™˜í•œë‹¤.
     public string GetLoginUrl()
     {
         // DOCS: https://docs.aws.amazon.com/cognito/latest/developerguide/login-endpoint.html
         string loginUrl = "https://" + AuthCognitoDomainPrefix + CognitoAuthUrl
-         + "/login?response_type=code&client_id="
+         + "/login?response_type=token&client_id="
          + AppClientID + "&redirect_uri=" + RedirectUrl +
          "&state=STATE" +
          "&scope=aws.cognito.signin.user.admin+email+openid+phone+profile";
@@ -51,20 +51,20 @@ public class AuthenticationManager : MonoBehaviour
 
     string confirCode;
     string userpool_provider = "cognito-idp." + Region + ".amazonaws.com/" + CredentialsManager._userPoolId;
-    //¸µÅ© ÈÄ ¾îÇÃ¸®ÄÉÀÌ¼Ç µ¹¾Æ¿À¸é ½ÇÇàµÇ´Â ÇÔ¼ö.
+    //ë§í¬ í›„ ì–´í”Œë¦¬ì¼€ì´ì…˜ ëŒì•„ì˜¤ë©´ ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜.
     public async void ProcessDeepLink(string deepLinkUrl)
     {
 
-        bool exchangeSuccess = await ExchangeAuthCodeForAccessToken(deepLinkUrl); //ÄÚµå¸¦ ÅäÅ«À¸·Î ¹Ù²Ù´Â ÇÔ¼ö È£Ãâ
+        bool exchangeSuccess = await ExchangeAuthCodeForAccessToken(deepLinkUrl); //ì½”ë“œë¥¼ í† í°ìœ¼ë¡œ ë°”ê¾¸ëŠ” í•¨ìˆ˜ í˜¸ì¶œ
 
         if (exchangeSuccess)
         {
-            CredentialsManager._credentials.AddLogin(userpool_provider, jwt);
+            CredentialsManager._credentials.AddLogin(userpool_provider, Cognito.id_token);
             string IdentityId = CredentialsManager._credentials.GetIdentityId();
-            Debug.LogError(IdentityId);
         }
     }
-    // ÀúÀåµÇ¾î ÀÖ´ø ÅäÅ«ÀÌ ¸¸·áµÇÁö ¾Ê¾Ò´Ù¸é ´Ù½Ã ºÒ·¯¿Â´Ù.
+
+    // ì €ì¥ë˜ì–´ ìˆë˜ í† í°ì´ ë§Œë£Œë˜ì§€ ì•Šì•˜ë‹¤ë©´ ë‹¤ì‹œ ë¶ˆëŸ¬ì˜¨ë‹¤.
     public async Task<bool> CallRefreshTokenEndpoint()
     {
         UserSessionCache userSessionCache = new UserSessionCache();
@@ -120,36 +120,43 @@ public class AuthenticationManager : MonoBehaviour
         return false;
     }
 
-    //ÀÎÁõÄÚµå¸¦ ÅäÅ«À¸·Î ¹Ù²ãÁØ´Ù.
+    //ì¸ì¦ì½”ë“œë¥¼ í† í°ìœ¼ë¡œ ë°”ê¿”ì¤€ë‹¤.
     public async Task<bool> ExchangeAuthCodeForAccessToken(string rawUrlWithGrantCode)
     {
-        string allQueryParams = rawUrlWithGrantCode.Split('?')[1];
-
-        // it's likely there won't be more than one param
-        string[] paramsSplit = allQueryParams.Split('&');
-
-
-        foreach (string param in paramsSplit)
+        Debug.Log(rawUrlWithGrantCode);
+        string allQueryParams1 = rawUrlWithGrantCode.Split('#')[1];
+        string[] paramSplit2 = allQueryParams1.Split('&');
+        foreach (string param in paramSplit2)
         {
-            // Debug.Log("param: " + param);
+            //Â Debug.Log("param:Â "Â +Â param);
 
-            // find the code parameter and its value
-            if (param.StartsWith("code"))
+            //Â findÂ theÂ codeÂ parameterÂ andÂ itsÂ value
+            if (param.StartsWith("id_token"))
             {
                 string grantCode = param.Split('=')[1];
-                string grantCodeCleaned = grantCode.removeAllNonAlphanumericCharsExceptDashes(); // sometimes the url has a # at the end of the string
-                return await CallCodeExchangeEndpoint(grantCodeCleaned);
+                Debug.Log(grantCode);
+                /*stringÂ grantCodeCleanedÂ =Â grantCode.removeAllNonAlphanumericCharsExceptDashes();*/
+                Cognito.id_token = grantCode;
+                Debug.Log("idÂ tokenê°’ì€________________Â Â Â Â Â ");
+                Debug.Log(grantCode);
+            }
+            else if (param.StartsWith("access_token"))
+            {
+                string grantCode = param.Split('=')[1];
+                /*stringÂ grantCodeCleanedÂ =Â grantCode.removeAllNonAlphanumericCharsExceptDashes();*/
+                Cognito.access_Token = grantCode;
+                Debug.Log("accessÂ tokenê°’ì€________________");
+                Debug.Log(grantCode);
             }
             else
             {
-                Debug.Log("Code not found");
-                return false;
+                Debug.Log("CodeÂ notÂ found");
             }
         }
         return true;
     }
 
-    //¹Ù²Û ÅäÅ«À» ÀÓÀÇ ÁöÁ¡¿¡ ¾÷µ¥ÀÌÆ®ÇÑ´Ù.
+    //ë°”ê¾¼ í† í°ì„ ì„ì˜ ì§€ì ì— ì—…ë°ì´íŠ¸í•œë‹¤.
     private async Task<bool> CallCodeExchangeEndpoint(string grantCode)
     {
         confirCode = grantCode;

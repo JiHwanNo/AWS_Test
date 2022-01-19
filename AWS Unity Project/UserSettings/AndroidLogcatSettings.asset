@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CR716J03N",
         "name": "com.GoogleAWS.Test",
-        "processId": 17659,
+        "processId": 9410,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -102,6 +102,66 @@
             "deviceId": "R5CR716J03N",
             "name": "com.GoogleAWS.Test",
             "processId": 17659,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 9995,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 7304,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 7465,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 9154,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 11638,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 12649,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 18138,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 26042,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 9003,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 9410,
             "exited": false
         }
     ],

@@ -18,6 +18,8 @@ public class Cognito : MonoBehaviour
     public InputField LoginPasswordField;
     public InputField LoginUsernameField;
 
+    static public string id_token;
+    static public string access_Token;
     // Token Holder
     public static string jwt;
 

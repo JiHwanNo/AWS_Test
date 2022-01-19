@@ -6,25 +6,25 @@ public class UIManager : MonoBehaviour
 {
     public Button LoginBtn;
     public Button TokenBtn;
-    Text tokentext;
+    
 
     private AuthenticationManager _authenticationManager;
+    ApiManager _apiManager;
     private void Awake()
     {
         _authenticationManager = FindObjectOfType<AuthenticationManager>();
-        tokentext = TokenBtn.transform.GetChild(0).GetComponent<Text>();
+        _apiManager = FindObjectOfType<ApiManager>();
     }
     void Start()
     {
         LoginBtn.onClick.AddListener(OpenLogin);
-        TokenBtn.onClick.AddListener(CheckToken);
+        TokenBtn.onClick.AddListener(Token_linkAPI);
         RefreshToken();
     }
 
-    void CheckToken()
+    void Token_linkAPI()
     {
-        UserSessionCache userSessionCache = new UserSessionCache();
-        SaveDataManager.LoadJsonData(userSessionCache);
+        _apiManager.CallTestApi();
     }
 
     void OpenLogin()
