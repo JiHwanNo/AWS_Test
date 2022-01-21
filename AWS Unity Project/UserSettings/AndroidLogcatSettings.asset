@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CR716J03N",
         "name": "com.GoogleAWS.Test",
-        "processId": 9410,
+        "processId": 22613,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -162,6 +162,12 @@
             "deviceId": "R5CR716J03N",
             "name": "com.GoogleAWS.Test",
             "processId": 9410,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR716J03N",
+            "name": "com.GoogleAWS.Test",
+            "processId": 22613,
             "exited": false
         }
     ],

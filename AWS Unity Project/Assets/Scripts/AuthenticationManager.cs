@@ -19,10 +19,8 @@ public class AuthenticationManager : MonoBehaviour
     private const string RefreshTokenGrantType = "refresh_token";
     private const string CognitoAuthUrl = ".auth." + Region + ".amazoncognito.com";
     private const string TokenEndpointPath = "/oauth2/token";
-    private static string _userid = "";
 
     // Token Holder
-    public static string jwt;
     public static bool loginSuccessful;
 
     // Create an Identity Provider
@@ -59,7 +57,7 @@ public class AuthenticationManager : MonoBehaviour
 
         if (exchangeSuccess)
         {
-            CredentialsManager._credentials.AddLogin(userpool_provider, Cognito.id_token);
+            CredentialsManager._credentials.AddLogin(userpool_provider, CredentialsManager._id_token);
             string IdentityId = CredentialsManager._credentials.GetIdentityId();
         }
     }
@@ -108,10 +106,10 @@ public class AuthenticationManager : MonoBehaviour
                 // token endpoint to get refreshed access token does NOT return the refresh token, so manually save it from before.
                 authenticationResultType.refresh_token = preservedRefreshToken;
 
-                _userid = AuthUtilities.GetUserSubFromIdToken(authenticationResultType.id_token);
+                CredentialsManager._userid = AuthUtilities.GetUserSubFromIdToken(authenticationResultType.id_token);
 
                 // update session cache
-                SaveDataManager.SaveJsonData(new UserSessionCache(authenticationResultType, _userid));
+                SaveDataManager.SaveJsonData(new UserSessionCache(authenticationResultType,CredentialsManager._userid));
                 webRequest.Dispose();
 
                 return true;
@@ -136,7 +134,7 @@ public class AuthenticationManager : MonoBehaviour
                 string grantCode = param.Split('=')[1];
                 Debug.Log(grantCode);
                 /*string grantCodeCleaned = grantCode.removeAllNonAlphanumericCharsExceptDashes();*/
-                Cognito.id_token = grantCode;
+                CredentialsManager._id_token = grantCode;
                 Debug.Log("id token값은________________     ");
                 Debug.Log(grantCode);
             }
@@ -144,7 +142,7 @@ public class AuthenticationManager : MonoBehaviour
             {
                 string grantCode = param.Split('=')[1];
                 /*string grantCodeCleaned = grantCode.removeAllNonAlphanumericCharsExceptDashes();*/
-                Cognito.access_Token = grantCode;
+                CredentialsManager._access_Token = grantCode;
                 Debug.Log("access token값은________________");
                 Debug.Log(grantCode);
             }
@@ -183,11 +181,11 @@ public class AuthenticationManager : MonoBehaviour
 
             BADAuthenticationResultType authenticationResultType = JsonUtility.FromJson<BADAuthenticationResultType>(webRequest.downloadHandler.text);
             Debug.LogError(webRequest.downloadHandler.text);
-            _userid = AuthUtilities.GetUserSubFromIdToken(authenticationResultType.id_token);
+            CredentialsManager._userid = AuthUtilities.GetUserSubFromIdToken(authenticationResultType.id_token);
 
             // update session cache
-            SaveDataManager.SaveJsonData(new UserSessionCache(authenticationResultType, _userid));
-            jwt = authenticationResultType.id_token;
+            SaveDataManager.SaveJsonData(new UserSessionCache(authenticationResultType, CredentialsManager._userid));
+            CredentialsManager.jwt = authenticationResultType.id_token;
             webRequest.Dispose();
             return true;
         }

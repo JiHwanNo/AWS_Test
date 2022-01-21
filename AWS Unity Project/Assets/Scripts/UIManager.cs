@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Button LoginBtn;
     public Button TokenBtn;
-    
+
 
     private AuthenticationManager _authenticationManager;
     ApiManager _apiManager;
@@ -37,5 +35,5 @@ public class UIManager : MonoBehaviour
         bool successfulRefresh = await _authenticationManager.CallRefreshTokenEndpoint(); // 기존의 토큰이 저장되어 있다면 그것을 재활용한다.
     }
 
-  
+
 }

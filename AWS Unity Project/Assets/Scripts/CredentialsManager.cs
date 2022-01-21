@@ -19,6 +19,9 @@ public class CredentialsManager
     // Initialize the Amazon Cognito credentials provider
     public static CognitoAWSCredentials _credentials = new CognitoAWSCredentials(_identityPool, _region);
     // User's Cognito ID once logged in becomes set here
-    public static string userid = "";
-    
+    public static string _userid = "";
+    public static string _id_token = "";
+    public static string _access_Token = "";
+
+    public static string jwt = "";
 }
